@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 30, 2021 at 03:38 PM
+-- Generation Time: Aug 30, 2021 at 03:48 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -58,8 +58,9 @@ CREATE TABLE `questions` (
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `user_name` varchar(60) NOT NULL,
-  `user_email` int(60) NOT NULL,
-  `user_password` int(60) NOT NULL
+  `user_email` varchar(60) NOT NULL,
+  `user_password` varchar(60) NOT NULL,
+  `user_id` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
