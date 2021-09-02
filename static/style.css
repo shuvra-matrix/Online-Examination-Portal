@@ -36,3 +36,25 @@ button{
 label{
     font-weight:500 ;
 }
+
+.admin_main{
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.admin_sub{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: .5rem;
+
+}
+
+#btns{
+    width: 50%;
+    margin: auto;
+}
+

@@ -1,112 +1,89 @@
-<?php 
+<?php include "./include/head.php";
+include "./include/navbar.php";
+?>
 
-include './dp.php'; 
 
+<?php
 
-if(isset($_POST['login']))
-{   
+include './dp.php';
+
+$message = "";
+if (isset($_POST['login'])) {
     $user_type = $_POST['user_type'];
-    if($user_type == "student")
-    {   
+    if ($user_type == "student") {
         $user_id = $_POST['user_id'];
-        $user_id = mysqli_real_escape_string($connect,$user_id);
+        $user_id = mysqli_real_escape_string($connect, $user_id);
         $password = $_POST['password'];
-        $password = mysqli_real_escape_string($connect,$password);
-        $query = "SELECT * FROM user WHERE user_id = '$user_id'";
-        $result = mysqli_query($connect,$query);
-        while($row = mysqli_fetch_assoc($result))
-        {
+        $password = mysqli_real_escape_string($connect, $password);
+        $query = "SELECT * FROM user";
+        $result = mysqli_query($connect, $query);
+        while ($row = mysqli_fetch_assoc($result)) {
             $data_user_id = $row['user_id'];
             $data_user_name = $row['user_name'];
             $data_password = $row['user_password'];
-            if ($data_password == $password and $data_user_id == $user_id)
+            if ($data_password == $password and $data_user_id == $user_id) {
+                echo " <script> alert('Log In Successfull'); </script>";
+                
+            } elseif ($data_password != $password or $data_user_id != $user_id) 
             {
-                echo "Log iN";
-                echo $data_user_name;
-            }
-            else
-            {
-                echo "invalid password";
+                $message = "Invalid Credintial! if you forgot your password please contact your  admin  ";
             }
         }
-
     }
-    elseif ($user_type == "admin") 
+    if ($user_type == "admin") 
     {
         $admin_id = $_POST['user_id'];
-        $admin_id = mysqli_real_escape_string($connect, $user_id);
+        $admin_id = mysqli_real_escape_string($connect, $admin_id);
         $password = $_POST['password'];
         $password = mysqli_real_escape_string($connect, $password);
-        $query = "SELECT * FROM admin WHERE admin_id = '$admin_userid'";
+        $query = "SELECT * FROM admin" ;
         $result = mysqli_query($connect, $query);
         while ($row = mysqli_fetch_assoc($result)) 
         {
             $data_admin_id = $row['admin_userid'];
             $data_password = $row['admin_password'];
-            if ($data_password == $password and $data_user_id == $user_id) 
-            {
-                echo "Log iN";
-                echo $data_user_name;
+            if ($data_password == $password and $data_admin_id == $admin_id) 
+            {   
+                header("Location: ./admin_page.php");
             } 
-            
-            else 
-            {
-                echo "invalid password";
+            elseif ($data_password != $password or $data_admin_id != $admin_id) {
+                $message = "Invalid Credintial! if you forgot your password please contact your  admin  ";
             }
+        }
     }
 }
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Document</title>
-</head>
 
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Exam Portal</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            </div>
+<div class="main_div">
+    <form action="" method="POST">
+        <div class="inside_div">
+            <label for="email">User Id</label>
+            <input id="email" type="text" name="user_id" placeholder="Your User Id">
         </div>
-    </nav>
-    <div class="main_div">
-        <form action="" method="POST">
-            <div class="inside_div">
-                <label for="email">User Id</label>
-                <input id="email" type="text" name="user_id"  placeholder="Your User Id">
-            </div>
-            <div class="inside_div">
-                <label for="password">Password</label>
-                <input type="password" name="password"  placeholder="Password">
-            </div>
-            <div class="inside_div">
-                <label for="options">User Type</label>
-                <select name="user_type" id="">
-                    <option value="">Select User</option>
-                    <option value="student">Student</option>
-                    <option value="admin">Admin</option>
-                </select>
+        <div class="inside_div">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <div class="inside_div">
+            <label for="options">User Type</label>
+            <select name="user_type" id="">
+                <option value="">Select User</option>
+                <option value="student">Student</option>
+                <option value="admin">Admin</option>
+            </select>
 
-            </div>
-            <div class="inside_div">
-                <button class="btn btn-primary" value="login" name="login">Log In </button>
-            </div>
-        </form>
-    </div>
+        </div>
+        <div class="inside_div">
+            <button class="btn btn-primary" value="login" name="login">Log In </button>
+        </div>
+        <div class="inside_div">
+            <p style="color: red;"><?php echo $message; ?></p>
+        </div>
+    </form>
+</div>
 </body>
 
 </html>
