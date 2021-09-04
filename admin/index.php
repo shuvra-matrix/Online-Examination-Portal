@@ -1,12 +1,10 @@
-<?php include "./include/head.php";
+<?php 
+include "./include/head.php";
 include "./include/navbar.php";
 ?>
 
 
 <?php
-
-include './dp.php';
-
 $message = "";
 if (isset($_POST['login'])) {
     $user_type = $_POST['user_type'];
@@ -44,7 +42,7 @@ if (isset($_POST['login'])) {
             $data_password = $row['admin_password'];
             if ($data_password == $password and $data_admin_id == $admin_id) 
             {   
-                header("Location: ./admin_page.php");
+                header("Location: .admin_index.php");
             } 
             elseif ($data_password != $password or $data_admin_id != $admin_id) {
                 $message = "Invalid Credintial! if you forgot your password please contact your  admin  ";
