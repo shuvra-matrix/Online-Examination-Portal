@@ -1,4 +1,5 @@
 <?php
+include './include/session.php'; 
 $action = $_GET["action"];
 
 switch($action)

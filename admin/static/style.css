@@ -4,6 +4,7 @@
 body{
     font-family: 'Roboto',sans-serif;
     box-sizing: border-box;
+    min-height: 130vh;
 }
 
 .main_div{
@@ -58,4 +59,6 @@ label{
     margin: auto;
 }
 
-
+.class_topic_table{
+    margin-left: 4rem;
+}

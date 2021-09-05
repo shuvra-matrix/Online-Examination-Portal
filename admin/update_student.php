@@ -1,6 +1,8 @@
 <?php
+include './include/session.php'; 
 include "./include/head.php";
 include "./include/navbar.php";
+
 $message = "";
 if (isset($_POST['update_student'])) {
     $id = $_POST['id'];

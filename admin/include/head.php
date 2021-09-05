@@ -1,4 +1,5 @@
-<?php include '../include/dp.php'; ?>
+<?php include '../include/dp.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
