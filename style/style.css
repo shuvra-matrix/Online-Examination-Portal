@@ -59,3 +59,27 @@ label{
 }
 
 
+.topic_main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.topic_sub{
+
+    background-color: coral;
+    width: 200px;
+    height: 200px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+
+}
+
+.topic_sub:hover{
+    background-color: rgba(187, 187, 187, 0.322);
+}
