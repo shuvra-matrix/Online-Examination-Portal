@@ -1,5 +1,5 @@
 <?php
-include './include/session.php'; 
+include './include/session.php';
 include "./include/head.php";
 include "./include/navbar.php";
 
@@ -34,8 +34,8 @@ if (isset($_POST['add_topic'])) {
             </div>
         </form>
     </div>
-    <div class="class_topic_table">
-        <table class="table table-striped">
+    <div class="class_topic_table" style="overflow: auto;">
+        <table class="table table-striped" style="background-color: #f8c200;">
             <thead>
                 <th>ID</th>
                 <th>Topic</th>
@@ -63,4 +63,3 @@ if (isset($_POST['add_topic'])) {
 
 
 </html>
-

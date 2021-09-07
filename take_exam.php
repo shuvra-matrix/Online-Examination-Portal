@@ -96,19 +96,19 @@ $ans = $_SESSION['question_array'][$_SESSION['next_question']][6];
 
             </div>
             <div class="exam_sub_div">
-                <input class="radio_input" type="radio" name="exampleRadios" value="<?php echo $option2; ?>">
+                <input class="radio_input" type="radio" name="exampleRadios" value="<?php echo $option2; ?>" >
                 <label class="radio_input_lable" for="exampleRadios2">
                     B. <?php echo $option2; ?>
                 </label>
             </div>
             <div class="exam_sub_div">
-                <input class="radio_input" type="radio" name="exampleRadios" value="<?php echo $option3; ?>">
+                <input class="radio_input" type="radio" name="exampleRadios" value="<?php echo $option3; ?>" >
                 <label class="radio_input_lable" for="exampleRadios2">
                     C. <?php echo $option3; ?>
                 </label>
             </div>
             <div class="exam_sub_div">
-                <input class="radio_input" type="radio" name="exampleRadios" value="<?php echo $option4; ?>">
+                <input class="radio_input" type="radio" name="exampleRadios" value="<?php echo $option4; ?>" >
                 <label class="radio_input_lable" for="exampleRadios2">
                     D. <?php echo $option4; ?>
                 </label>

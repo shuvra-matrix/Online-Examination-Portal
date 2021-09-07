@@ -1,12 +1,12 @@
 <?php
-include './include/session.php'; 
+include './include/session.php';
 include "./include/head.php";
 include "./include/navbar.php";
 
 ?>
 
 <div style="width: 90% ; margin: auto; overflow: auto;">
-    <table class="table table-striped">
+    <table class="table table-striped" style="background-color: #f8c200;">
         <thead>
             <th>Id</th>
             <th>Questions</th>
@@ -48,5 +48,3 @@ include "./include/navbar.php";
     </table>
 
 </div>
-
-

@@ -17,14 +17,14 @@ body{
     margin:  3rem auto; 
     border-radius: 12px;
     background-color: honeydew;
-    box-shadow: 5px 10px 8px 10px #888888;
+    background-color: rgba(173, 173, 173, 0.363);
+    box-shadow: 5px 10px 8px 10px #00000059;
     padding: 1rem;
 }
 
 .inside_div{
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 1rem;
 }
 
@@ -62,4 +62,34 @@ label{
 
 .class_topic_table{
     margin-left: 4rem;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    
+}
+
+@media only screen and (max-width:1028px) {
+    .log_input {
+
+        width: 110%;
+
+    }
+
+
+
+}
+
+
+@media only screen and (max-width:492px) {
+
+    .main_div {
+        padding: 2rem;
+        width: 70%;
+    }
+
+
+
 }
