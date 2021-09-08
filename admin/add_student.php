@@ -1,5 +1,5 @@
 <?php
-include "./include/session.php"; 
+include "./include/session.php";
 include "./include/head.php";
 include "./include/navbar.php";
 
@@ -12,10 +12,9 @@ if (isset($_POST["add_student"])) {
     $confirm_pasword = $_POST["confirm_pasword"];
 
     $query = "SELECT * FROM user WHERE user_id = '$student_ID'";
-    $result = mysqli_query($connect,$query);
+    $result = mysqli_query($connect, $query);
     $row = mysqli_num_rows($result);
-    if ($row == 0 )
-    {
+    if ($row == 0) {
 
 
         if ($student_password == $confirm_pasword) {
@@ -26,22 +25,18 @@ if (isset($_POST["add_student"])) {
                 echo "<script>
                     alert('Something went wrong');
                 </script>";
-            }
-            else
-            {
+            } else {
                 echo "<script>
                     alert('Student add successfully');
-                </script>";   
+                </script>";
             }
         } else {
             $message = "password does not match";
         }
-    }
-    else
-    {
+    } else {
         echo "<script>
                     alert('Student alredy present');
-                </script>";  
+                </script>";
     }
 }
 
@@ -52,23 +47,23 @@ if (isset($_POST["add_student"])) {
     <form action="" method="POST">
         <div class="admin_sub">
             <label for="name">Student Name</label>
-            <input type="text" name="student_name">
+            <input class="admin_input" type="text" name="student_name">
         </div>
         <div class="admin_sub">
             <label for="name">Student Email</label>
-            <input type="text" name="student_email">
+            <input class="admin_input" type="text" name="student_email">
         </div>
         <div class="admin_sub">
             <label for="name">Student Id</label>
-            <input type="text" name="student_id">
+            <input class="admin_input" type="text" name="student_id">
         </div>
         <div class="admin_sub">
             <label for="name">Student Password</label>
-            <input type="text" name="student_pasword">
+            <input class="admin_input" type="text" name="student_pasword">
         </div>
         <div class="admin_sub">
             <label for="name">Confirm Password</label>
-            <input type="text" name="confirm_pasword">
+            <input class="admin_input" type="text" name="confirm_pasword">
         </div>
         <div id="btns">
             <button type="submit" name="add_student" class="btn btn-primary">Add Student</button>

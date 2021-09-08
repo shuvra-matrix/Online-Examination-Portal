@@ -77,8 +77,24 @@ label{
         width: 110%;
 
     }
+    body{
+         background-image: linear-gradient(to right, red, yellow);
+    }
 
 
+
+}
+
+
+@media only screen and (max-width:600px) {
+
+    .admin_input{
+        width: 120%;
+    }
+    .class_topic_table {
+        margin-left: 1rem;
+        margin-top: 2rem;
+    }
 
 }
 
@@ -93,3 +109,4 @@ label{
 
 
 }
+

@@ -27,7 +27,7 @@ if (isset($_POST['add_topic'])) {
         <form action="" method="POST">
             <div class="admin_sub">
                 <label for="name">Topic Name</label>
-                <input type="text" name="topic_name">
+                <input class="admin_input" type="text" name="topic_name">
             </div>
             <div id="btns">
                 <button type="submit" name="add_topic" class="btn btn-primary">Add Topic</button>

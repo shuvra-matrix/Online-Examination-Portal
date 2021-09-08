@@ -1,11 +1,10 @@
 <?php
-include "./include/session.php"; 
+include "./include/session.php";
 include "./include/head.php";
 include "./include/navbar.php";
 
 
-if(isset($_POST['add_question']))
-{
+if (isset($_POST['add_question'])) {
     $questions = $_POST['questions'];
     $topic = $_POST['topic'];
     $options1 = $_POST["option_1"];
@@ -15,13 +14,10 @@ if(isset($_POST['add_question']))
     $ans = $_POST["ans"];
 
     $query  = "INSERT INTO questions(question,option1,option2,options3,options4,ans,topic) VALUES ('$questions','$options1','$options2','$options3','$options4','$ans','$topic')";
-    $result = mysqli_query($connect,$query);
-    if($result)
-    {
+    $result = mysqli_query($connect, $query);
+    if ($result) {
         echo "<script> alert('Questions Added'); </script>";
-    }
-    else
-    {   
+    } else {
         $mesage = "Something went wrong";
         die($mesage);
     }
@@ -37,12 +33,12 @@ if(isset($_POST['add_question']))
     <form action="" method="POST">
         <div class="admin_sub">
             <label for="name">Questions</label>
-            <input type="text" name="questions">
+            <input class="admin_input" type="text" name="questions">
         </div>
-        
+
         <div class="admin_sub">
             <label for="name">Topic</label>
-            <select name="topic" id="">
+            <select class="admin_input" name="topic" id="">
                 <option value="">Select Topic</option>
                 <?php
                 $query = "SELECT  * FROM topic";
@@ -55,26 +51,26 @@ if(isset($_POST['add_question']))
         </div>
 
 
-    
+
         <div class="admin_sub">
             <label for="name">Option 1</label>
-            <input type="text" name="option_1">
+            <input class="admin_input" type="text" name="option_1">
         </div>
         <div class="admin_sub">
             <label for="name">Option 2</label>
-            <input type="text" name="option_2">
+            <input class="admin_input" type="text" name="option_2">
         </div>
         <div class="admin_sub">
             <label for="name">Option 3</label>
-            <input type="text" name="option_3">
+            <input class="admin_input" type="text" name="option_3">
         </div>
         <div class="admin_sub">
             <label for="name">Option 4</label>
-            <input type="text" name="option_4">
+            <input class="admin_input" type="text" name="option_4">
         </div>
         <div class="admin_sub">
             <label for="name">Ans</label>
-            <input type="text" name="ans">
+            <input class="admin_input" type="text" name="ans">
         </div>
 
         <div id="btns">
