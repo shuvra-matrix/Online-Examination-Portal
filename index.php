@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
                         window.location.href = './student_index.php';
                 </script>";
         } elseif ($data_password != $password or $data_user_id != $user_id) {
-            $message = "Invalid Credintial! if you forgot your password please contact your  admin  ";
+            $message = "Invalid Credintial! <br> <a style='color:blue;' href='./change_password.php'>Forgot  password ?</a>  ";
         }
     }
 }
