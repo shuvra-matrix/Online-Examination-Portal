@@ -4,9 +4,11 @@ include "./include/head.php";
 include "./include/navbar.php";
 
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) 
+{
     $user_ans  = $_POST['exampleRadios'];
-    if ($_SESSION['question_array'][$_SESSION['next_question']][6] == $user_ans) {
+    if ($_SESSION['question_array'][$_SESSION['next_question']][6] == $user_ans) 
+    {
         $_SESSION['marks'] = $_SESSION['marks'] + 1;
     }
     unset($_SESSION['id_question']);
@@ -26,27 +28,30 @@ if (isset($_POST['submit'])) {
 
 
 
-if (!isset($_SESSION['next_question'])) {
+if (!isset($_SESSION['next_question'])) 
+{
     $_SESSION['next_question'] = 0;
     $_SESSION['marks'] = 0;
 }
 
 
 
-if (isset($_POST['next_question'])) {
+if (isset($_POST['next_question'])) 
+{
 
 
     $user_ans  = $_POST['exampleRadios'];
-    if ($_SESSION['question_array'][$_SESSION['next_question']][6] == $user_ans) {
+    if ($_SESSION['question_array'][$_SESSION['next_question']][6] == $user_ans) 
+    {
         $_SESSION['marks'] = $_SESSION['marks'] + 1;
-        echo $_SESSION['marks'];
     }
     $_SESSION['next_question'] = $_SESSION['next_question'] + 1;
 }
 
 
 
-if (!isset($_POST['next_question'])) {
+if (!isset($_POST['next_question'])) 
+{
     $q_id = $_POST['id'];
     $array = array();
     $query = "SELECT * FROM questions WHERE topic='$q_id'";
@@ -54,7 +59,8 @@ if (!isset($_POST['next_question'])) {
     $row_size = mysqli_num_rows($result);
     $_SESSION['row_size'] = $row_size;
     if ($row_size > 0) {
-        while ($rows = mysqli_fetch_assoc($result)) {
+        while ($rows = mysqli_fetch_assoc($result)) 
+        {
 
             array_push($array, array($rows['id'], $rows['question'], $rows['option1'], $rows['option2'], $rows['options3'], $rows['options4'], $rows['ans']));
         }

@@ -24,6 +24,7 @@ body{
 
 .login_main_div{
     background:  #d38312;
+    background: -webkit-linear-gradient(to right, #d38312, #a83279); 
     background: linear-gradient(to right, #d38312, #a83279);
     height: 100%;
     width: 100%;
@@ -35,7 +36,6 @@ body{
     background: white;
     box-shadow: 3px 5px 6px 10px #d83c0038;
     padding: 2rem;
-    position: relative;
     height: 90%;
     width: 30%;
     margin: 2rem auto;
@@ -191,18 +191,6 @@ input[type=radio]:checked + label{color:green;}
 
 
 
-@media only screen and (max-width:770px) {
-        
-
-        .radio_input_lable {
-            font-size: 1rem;
-        }
-        .login_sub_div{
-            width: 50%;
-            padding: .5rem;
-        }
-
-}
 
 @media only screen and (max-width:1028px) {
     .log_input {
@@ -212,11 +200,30 @@ input[type=radio]:checked + label{color:green;}
     }
     .login_sub_div{
         width: 40%;
+        margin: 4rem auto;
     
     }
 
 }
 
+
+@media only screen and (max-width:770px) {
+        
+
+    .radio_input_lable {
+        font-size: 1rem;
+    }
+    .login_main_div{position: fixed;
+    }
+
+    .login_sub_div{
+        width: 50%;
+        padding: .5rem;
+        height: 80%;
+        margin: 4rem auto;
+    }
+
+}
 
 @media only screen and (max-width:492px) {
         
