@@ -38,8 +38,8 @@ if(isset($_POST["update_topic"]))
     <form action="" method="POST">
         <div class="admin_sub">
             <label for="name">Topic Name</label>
-            <input type="text" name="topic_name" value="<?php echo $row['topic_name'];   ?>" placeholder="Topic Name" required>
-            <input type="hidden" name="id" value="<?php echo $row['id'];   ?>">
+            <input class="admin_input" type="text" name="topic_name" value="<?php echo $row['topic_name'];   ?>" placeholder="Topic Name" required>
+            <input class="admin_input" type="hidden" name="id" value="<?php echo $row['id'];   ?>">
         </div>
         <div id="btns">
             <button type="submit" name="update_topic" class="btn btn-primary">Update Topic</button>

@@ -58,7 +58,7 @@ if (isset($_POST['update_question'])) {
     <form action="" method="POST">
         <div class="admin_sub">
             <label for="name">Questions</label>
-            <input type="text" name="questions" value="<?php echo $row['question']; ?>" placeholder="Enter Question" required>
+            <input class="admin_input" type="text" name="questions" value="<?php echo $row['question']; ?>" placeholder="Enter Question" required>
             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
         </div>
         <?php
@@ -68,7 +68,7 @@ if (isset($_POST['update_question'])) {
         $user_topic = mysqli_fetch_assoc($result)  ?>
         <div class="admin_sub">
             <label for="name">Topic</label>
-            <select name="topic" id="" required>
+            <select class="admin_input" name="topic" id="" style="border-radius: 16px;" required>
                 <option value="<?php echo $user_topic['id'];  ?>"> <?php echo $user_topic['topic_name'];  ?> </option>
                 <?php
                 $query = "SELECT  * FROM topic";
@@ -84,27 +84,27 @@ if (isset($_POST['update_question'])) {
 
         <div class="admin_sub">
             <label for="name">Option 1</label>
-            <input type="text" name="option_1" value="<?php echo $row['option1']; ?>" placeholder="Option No 1" required>
+            <input class="admin_input" type="text" name="option_1" value="<?php echo $row['option1']; ?>" placeholder="Option No 1" required>
         </div>
         <div class="admin_sub">
             <label for="name">Option 2</label>
-            <input type="text" name="option_2" value="<?php echo $row['option2']; ?>" placeholder="Option No 2" required>
+            <input class="admin_input" type="text" name="option_2" value="<?php echo $row['option2']; ?>" placeholder="Option No 2" required>
         </div>
         <div class="admin_sub">
             <label for="name">Option 3</label>
-            <input type="text" name="option_3" value="<?php echo $row['options3']; ?>" placeholder="Option No 3" required>
+            <input class="admin_input" type="text" name="option_3" value="<?php echo $row['options3']; ?>" placeholder="Option No 3" required>
         </div>
         <div class="admin_sub">
             <label for="name">Option 4</label>
-            <input type="text" name="option_4" value="<?php echo $row['options4']; ?>" placeholder="Option No 4" required>
+            <input class="admin_input" type="text" name="option_4" value="<?php echo $row['options4']; ?>" placeholder="Option No 4" required>
         </div>
         <div class="admin_sub">
             <label for="name">Ans</label>
-            <input type="text" name="ans" value="<?php echo $row['ans']; ?>" placeholder="Answer" required>
+            <input class="admin_input" type="text" name="ans" value="<?php echo $row['ans']; ?>" placeholder="Answer" required>
         </div>
 
         <div id="btns">
-            <button type="submit" name="update_question" class="btn btn-success">Update Question</button>
+            <button  type="submit" name="update_question" class="btn btn-success">Update Question</button>
         </div>
     </form>
 </div>

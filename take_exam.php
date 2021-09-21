@@ -17,10 +17,17 @@ if (isset($_POST['submit']))
     unset($_SESSION['question_array']);
     unset($_SESSION['row_size']);
     $id = $_SESSION['id'];
-    $question_id = $_SESSION['question_id'];
+    $topic_id = $_SESSION['question_id'];
+    $name = $_SESSION['name'];
     $score = $_SESSION['marks'];
-    $query = "INSERT INTO user_score (user_id,score,question_id) VALUES ('$id','$score','$question_id')";
+    $query = "INSERT INTO user_score (user_id,score,topic_id,date,name) VALUES ('$id','$score','$topic_id',now(),'$name')";
     $result = mysqli_query($connect, $query);
+    if(!$result)
+    {
+        echo $query;
+        $ms = "probelm";
+        die($ms . mysqli_errno($connect));
+    }
     unset($_SESSION['marks']);
 
     echo "<script> alert('Your answer subitted ');

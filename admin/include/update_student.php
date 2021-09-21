@@ -46,23 +46,23 @@ if (isset($_POST['update_student'])) {
         <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
         <div class="admin_sub">
             <label for="name">Student Name</label>
-            <input type="text" name="student_name" value="<?php echo $row['user_name'] ?>" placeholder="Student Full Name" required>
+            <input class="admin_input" type="text" name="student_name" value="<?php echo $row['user_name'] ?>" placeholder="Student Full Name" required>
         </div>
         <div class="admin_sub">
             <label for="name">Student Email</label>
-            <input type="text" name="student_email" value="<?php echo $row['user_email'] ?>"  placeholder="Student Email" required>
+            <input class="admin_input" type="text" name="student_email" value="<?php echo $row['user_email'] ?>"  placeholder="Student Email" required>
         </div>
         <div class="admin_sub">
             <label for="name">Student Id</label>
-            <input type="text" name="student_id" value="<?php echo $row['user_id'] ?>" placeholder="Student Id" required>
+            <input class="admin_input" type="text" name="student_id" value="<?php echo $row['user_id'] ?>" placeholder="Student Id" required>
         </div>
         <div class="admin_sub">
             <label for="name">Student Password</label>
-            <input type="password" name="student_pasword" value="<?php echo $row['user_password'] ?>" placeholder="Password" required>
+            <input class="admin_input" type="password" name="student_pasword" value="<?php echo $row['user_password'] ?>" placeholder="Password" required>
         </div>
         <div class="admin_sub">
             <label for="name">Confirm Password</label>
-            <input type="text" name="confirm_pasword" value="<?php echo $row['user_password'] ?>" placeholder="Confirm Password" required>
+            <input class="admin_input" type="text" name="confirm_pasword" value="<?php echo $row['user_password'] ?>" placeholder="Confirm Password" required>
         </div>
         <div id="btns">
             <button type="submit" name="update_student" class="btn btn-success">Update Student</button>
