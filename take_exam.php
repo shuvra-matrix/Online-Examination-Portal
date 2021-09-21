@@ -24,9 +24,8 @@ if (isset($_POST['submit']))
     $result = mysqli_query($connect, $query);
     if(!$result)
     {
-        echo $query;
-        $ms = "probelm";
-        die($ms . mysqli_errno($connect));
+        $ms = "Error 502!";
+        die($ms );
     }
     unset($_SESSION['marks']);
 
