@@ -13,4 +13,5 @@
     <title>Document</title>
 </head>
 
-<body style="background-image: url('./image/21421.jpg'); background-size: cover;background-repeat: no-repeat; background-color: #eef6f9;">
+<!-- <body style="background-image: url('./image/21421.jpg'); background-size: cover;background-repeat: no-repeat; background-color: #eef6f9;"> -->
+<body>

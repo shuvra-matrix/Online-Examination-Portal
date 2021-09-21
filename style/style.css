@@ -4,45 +4,94 @@
 body{
     font-family: 'Roboto',sans-serif;
     box-sizing: border-box;
-}
-.main_div {
+    margin: 0;
+    padding: 0;
+    background: #70e1f5;  
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  
+    background: linear-gradient(to right, #ffd194, #70e1f5); 
 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.521);
+    
+}
+
+/* nav bar color */
+.bgg-light {
+    background-color: #51ccb700 !important;
+}
+
+
+/* login page css */
+
+.login_main_div{
+    background:  #d38312;
+    background: linear-gradient(to right, #d38312, #a83279);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+}
+
+.login_sub_div{
+    background: white;
+    box-shadow: 3px 5px 6px 10px #d83c0038;
+    padding: 2rem;
+    position: relative;
+    height: 90%;
+    width: 30%;
+    margin: 2rem auto;
+    border-radius: 12px;
+}
+
+.login_div{
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin: 3rem auto;
-    border-radius: 12px;
-    background-color: rgba(173, 173, 173, 0.363);
-    box-shadow: 5px 10px 8px 10px #888888;
-    padding: 1rem;
+    margin: 2rem;
 }
-
-.inside_div {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-}
-
-.image_class{
-    background-image: url('./image/21421.jpg');
-}
-
-
-input,select{
-    width: 25rem;
+input[class=log_input]{
+    width: 100%;
     padding: .4rem;
+    border: 1px coral solid;
+    border-radius: 16px;
 }
-button{
-    width: 10rem;
+input[class=log_input]:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+    
+ }
+strong{
+    font-size: 2rem;
 }
-label{
-    font-weight:500 ;
+p{
+    font-size: .9rem;
 }
 
+button[name=login]{
+    width: 100%;
+    background:  #d38312;
+    background: linear-gradient(to right, #d38312, #a83279);
+    border: none;
+    border-radius: 16px;
+}   
+/* login page css done */
 
 
+/* stdent index page css */
 
+.student_main_div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #70e1f5;  
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  
+    background: linear-gradient(to right, #ffd194, #70e1f5); 
+
+}
+.student_sub_div{
+
+    background-color: rgba(84, 235, 210, 0.178); padding: 0.4rem; margin: 1rem;border-radius: 8px;
+}
 .topic_main{
     display: flex;
     flex-direction: row;
@@ -51,53 +100,77 @@ label{
 }
 
 .topic_sub{
-
+    padding: .4rem;
     width: 200px;
     height: 200px;
     margin: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     border-radius: 8px;
+    background-color: rgba(255, 127, 80, 0);
+    box-shadow: 3px 5px 6px 10px #57565638;
+    text-align: center;
 
-}
-
-
-.topic_sub_1{
-    background-color: coral;
-}
-
-.topic_sub_2{
-    background-color: rgb(238, 44, 135);
-}
-.topic_sub_3 {
-    background-color: rgb(57, 167, 57);
-}
-
-.topic_sub_4{
-    background-color: aquamarine;
-}
-
-.topic_sub_5{
-    background-color: crimson;
-}
-
-.topic_sub_6{
-    background-color: violet;
-}
-
-.topic_sub_7{
-    background-color: lightsalmon;
-}
-
-.topic_sub_8{
-    background-color: khaki;
 }
 
 .topic_sub:hover{
-    background-color: rgba(167, 167, 167, 0.39);
+    background-color: rgba(167, 167, 167, 0.082);
+    box-shadow: 2px 3px 3px 5px #57565638;
 }
+
+.student_button{
+    width: 9.5rem;
+    background: #48b7ca;  
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  
+    background: linear-gradient(to right, #ffd194, #70e1f5); 
+    box-shadow: 3px 5px 6px 10px #57565638;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 18px;
+    color: black;
+    padding: .5rem;
+    margin-top: .4rem;
+
+}
+
+
+.student_button:hover{
+    background-color: rgba(167, 167, 167, 0.082);
+    box-shadow: 2px 3px 3px 5px #57565638;
+}
+
+
+
+
+/* stdent index page css end */
+
+/* exam page css start */
+
+
+.exam_main_div{
+
+display: flex; 
+align-items: center; 
+justify-content: center;
+flex-direction: column;
+flex-wrap: wrap;
+width: 60%;
+margin: 2rem auto;
+background-color: rgba(245, 245, 220, 0);
+box-shadow: 3px 5px 6px 10px #57565638;
+padding: 1rem;
+border-radius: 8px;
+
+}
+
+.exam_sub_div{
+    padding: .9rem;
+}
+
+label{
+    font-weight:500 ;
+}
+
 
 .radio_input{
     width: 23px;
@@ -111,42 +184,22 @@ label{
     font-size: 1.1rem;
 }
 
+input[type=radio]:checked + label{color:green;}
 
-.exam_sub_div{
-    padding: .9rem;
-}
-.exam_main_div{
 
-display: flex; 
-align-items: center; 
-justify-content: center;
-flex-direction: column;
-flex-wrap: wrap;
-margin: 2rem 10rem;
-background-color: beige;
-padding: 2rem;
-border-radius: 8px;
+/* exam page css end */
 
-}
 
-.student_sub_div{
-
-    background-color: rgba(84, 235, 184, 0.623); padding: 0.4rem; margin: 1rem;border-radius: 8px;
-}
-
-.bg-dark {
-    background-color: #343a40 !important;
-}
 
 @media only screen and (max-width:770px) {
-        .exam_main_div {
-
-            margin: 2rem 2rem;
-
-        }
+        
 
         .radio_input_lable {
             font-size: 1rem;
+        }
+        .login_sub_div{
+            width: 50%;
+            padding: .5rem;
         }
 
 }
@@ -157,8 +210,10 @@ border-radius: 8px;
       width: 110%;
 
     }
-
-
+    .login_sub_div{
+        width: 40%;
+    
+    }
 
 }
 
@@ -170,6 +225,9 @@ border-radius: 8px;
         width: 70%;
     } 
 
-
+    .login_sub_div{
+        width: 70%;
+        padding: .5rem;
+    }
 
     }

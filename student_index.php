@@ -6,10 +6,14 @@ include "./include/navbar.php";
 $name =  $_SESSION['name'];
 
 ?>
-<div>
+<div class="student_main_div">
     <div class="student_sub_div" >
         <h5>Hi! <?php echo $name;   ?></h5>
-        <p>Select Topic To Start Your Exam</p>
+        <ul>
+            <li>Select Topic And Click Start Button To Your Exam</li>
+            <li>This Is MCQ Type Exam</li>
+            <li>Each Question Has 4 Options</li> 
+        </ul>
     </div>
     <div class="topic_main">
 
@@ -23,9 +27,9 @@ $name =  $_SESSION['name'];
 
             <div class="topic_sub topic_sub_<?php  echo $div_no;  ?>">
                 <form action="take_exam.php" method="POST">
-                    <h4><?php echo $row['topic_name'];  ?></h4>
+                    <h5><?php echo $row['topic_name'];  ?></h4>
                     <input type="hidden" name="id" value="<?php  echo $row['id'];    ?>">
-                    <button class="btn btn-success">Start</button>
+                    <button class="student_button">Start</button>
                 </form>
             </div>
         <?php $div_no = $div_no + 1; } ?>
