@@ -13,6 +13,9 @@ switch($action)
     case "add_student";
         include "./include/add_student.php";
         break;
+    case "view_score";
+        include "./include/view_score.php";
+        break;
     case "delete_student":
         $student_id = $_GET['value'];
         $query = "DELETE FROM user WHERE id = '$student_id'";
@@ -24,3 +27,5 @@ switch($action)
 }
 
 ?>
+</body>
+</html>

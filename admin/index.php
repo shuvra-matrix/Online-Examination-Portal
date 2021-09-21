@@ -35,8 +35,6 @@ if (isset($_POST['login'])) {
 ?>
 
 
-
-
 <div class="login_main_div">
     <div class="login_sub_div">
             <div class="login_div">

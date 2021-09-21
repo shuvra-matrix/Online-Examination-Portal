@@ -18,6 +18,9 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="./student.php?action=add_student">Add Student</a></li>
                         <li><a class="dropdown-item" href="./student.php?action=view_student">View Student</a></li>
+                        <li class="nav-item">
+                            <a class="dropdown-item" aria-current="page" href="./student.php?action=view_score">Student Score</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -30,8 +33,9 @@
                         <li><a class="dropdown-item" href="./topic.php?action='#'">Topic Section</a></li>
                     </ul>
                 </li>
+               
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./include/session.php?action=logout">Log Out</a>
+                    <a class="nav-link active" aria-current="page" href="./include/logout.php?action=logout">Log Out</a>
                 </li>
             </ul>
             <?php } ?>

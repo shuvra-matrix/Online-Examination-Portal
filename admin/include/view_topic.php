@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['add_topic'])) {
     $name = $_POST['topic_name'];
-    $name = mysqli_real_escape_string($connect, $name);
+    $name = strings($name);
     $query = "INSERT INTO topic(topic_name) VALUES ('$name') ";
     $result = mysqli_query($connect, $query);
     if ($result) {
@@ -22,7 +22,7 @@ if (isset($_POST['add_topic'])) {
         <form action="" method="POST">
             <div class="admin_sub">
                 <label for="name">Topic Name</label>
-                <input class="admin_input" type="text" name="topic_name">
+                <input class="admin_input" type="text" name="topic_name" placeholder="Topic Name" required>
             </div>
             <div id="btns">
                 <button type="submit" name="add_topic" class="btn btn-primary">Add Topic</button>
@@ -57,4 +57,3 @@ if (isset($_POST['add_topic'])) {
 </div>
 
 
-</html>

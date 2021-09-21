@@ -24,3 +24,5 @@ switch($action)
 }
 
 ?>
+</body>
+</html>

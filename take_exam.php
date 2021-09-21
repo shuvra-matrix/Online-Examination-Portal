@@ -7,6 +7,7 @@ include "./include/navbar.php";
 if (isset($_POST['submit'])) 
 {
     $user_ans  = $_POST['exampleRadios'];
+    $user_ans = strings($user_ans);
     if ($_SESSION['question_array'][$_SESSION['next_question']][6] == $user_ans) 
     {
         $_SESSION['marks'] = $_SESSION['marks'] + 1;
@@ -16,8 +17,9 @@ if (isset($_POST['submit']))
     unset($_SESSION['question_array']);
     unset($_SESSION['row_size']);
     $id = $_SESSION['id'];
+    $question_id = $_SESSION['question_id'];
     $score = $_SESSION['marks'];
-    $query = "INSERT INTO user_score (user_id,score) VALUES ('$id','$score')";
+    $query = "INSERT INTO user_score (user_id,score,question_id) VALUES ('$id','$score','$question_id')";
     $result = mysqli_query($connect, $query);
     unset($_SESSION['marks']);
 
@@ -41,6 +43,7 @@ if (isset($_POST['next_question']))
 
 
     $user_ans  = $_POST['exampleRadios'];
+    $user_ans = strings($user_ans);
     if ($_SESSION['question_array'][$_SESSION['next_question']][6] == $user_ans) 
     {
         $_SESSION['marks'] = $_SESSION['marks'] + 1;
@@ -53,6 +56,8 @@ if (isset($_POST['next_question']))
 if (!isset($_POST['next_question'])) 
 {
     $q_id = $_POST['id'];
+    $_SESSION['question_id'] = $q_id; 
+    $q_id = strings($q_id);
     $array = array();
     $query = "SELECT * FROM questions WHERE topic='$q_id'";
     $result = mysqli_query($connect, $query);

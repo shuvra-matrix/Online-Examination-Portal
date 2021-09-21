@@ -14,9 +14,9 @@ $data_password = "";
 if (isset($_POST['login'])) 
 {
     $user_id = $_POST['user_id'];
-    $user_id = mysqli_real_escape_string($connect, $user_id);
+    $user_id = strings($user_id);
     $password = $_POST['password'];
-    $password = mysqli_real_escape_string($connect, $password);
+    $password = strings($password);
     $query = "SELECT * FROM user WHERE user_id = '$user_id'";
     $result = mysqli_query($connect, $query);
     while ($row = mysqli_fetch_assoc($result)) 

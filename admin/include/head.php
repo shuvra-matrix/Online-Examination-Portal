@@ -1,4 +1,5 @@
 <?php include '../include/dp.php';
+include '../include/function.php';
 ?>
 
 <!DOCTYPE html>
