@@ -1,8 +1,4 @@
 <?php
-include "./include/session.php";
-include "./include/head.php";
-include "./include/navbar.php";
-
 
 if (isset($_POST['add_question'])) {
     $questions = $_POST['questions'];
@@ -38,7 +34,7 @@ if (isset($_POST['add_question'])) {
 
         <div class="admin_sub">
             <label for="name">Topic</label>
-            <select class="admin_input" name="topic" id="">
+            <select class="admin_input" name="topic" id="" style="border-radius: 16px;">
                 <option value="">Select Topic</option>
                 <?php
                 $query = "SELECT  * FROM topic";
@@ -74,7 +70,7 @@ if (isset($_POST['add_question'])) {
         </div>
 
         <div id="btns">
-            <button type="submit" name="add_question" class="btn btn-primary">Add Question</button>
+            <button  type="submit" name="add_question" class="btn btn-primary">Add Question</button>
         </div>
     </form>
 </div>

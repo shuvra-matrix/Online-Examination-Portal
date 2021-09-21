@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bgg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="./admin_index.php">Exam Portal</a>
+        <a class="navbar-brand" href="./admin_index.php"><h4>Exam Portal</h4></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,8 +16,8 @@
                         Students
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="./add_student.php">Add Student</a></li>
-                        <li><a class="dropdown-item" href="./view_student.php">View Student</a></li>
+                        <li><a class="dropdown-item" href="./student.php?action=add_student">Add Student</a></li>
+                        <li><a class="dropdown-item" href="./student.php?action=view_student">View Student</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -25,9 +25,9 @@
                         Questions
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="./add_questions.php">Add Questions</a></li>
-                        <li><a class="dropdown-item" href="./view_questions.php">View Questions</a></li>
-                        <li><a class="dropdown-item" href="./topic.php">Topic Section</a></li>
+                        <li><a class="dropdown-item" href="./question.php?action=add_question">Add Questions</a></li>
+                        <li><a class="dropdown-item" href="./question.php?action=view_question">View Questions</a></li>
+                        <li><a class="dropdown-item" href="./topic.php?action='#'">Topic Section</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

@@ -1,8 +1,4 @@
 <?php
-include './include/session.php'; 
-include "./include/head.php";
-include "./include/navbar.php";
-
 
 $id = $_GET['value'];
 $id = mysqli_real_escape_string($connect, $id);
@@ -25,7 +21,7 @@ if (isset($_POST['update_question'])) {
     $result = mysqli_query($connect, $query);
     if ($result) {
         echo "<script> alert('Question Updated'); 
-            window.location.href = './view_questions.php'; 
+            window.location.href = './view_questions.php?action=#'; 
 
         </script>";
     } else {

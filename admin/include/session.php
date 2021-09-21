@@ -5,16 +5,7 @@
     {
       header("Location: ./index.php");   
     }
-    elseif(isset($_GET['action']))
-    {
-          session_start();
-          session_destroy();
-          header("Location: ../index.php");   
- 
-     
-
-    }
-
+  
      
 
 

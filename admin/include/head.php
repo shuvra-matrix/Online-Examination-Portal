@@ -14,5 +14,5 @@
     <title>Document</title>
 
 </head>
+<body>
 
-<body style="background-image: url('../image/admin.jpg'); background-size: cover;background-repeat: no-repeat; background-color: #eef6f9;">

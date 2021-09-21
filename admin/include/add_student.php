@@ -1,8 +1,4 @@
 <?php
-include "./include/session.php";
-include "./include/head.php";
-include "./include/navbar.php";
-
 $message = "";
 if (isset($_POST["add_student"])) {
     $student_name = $_POST["student_name"];

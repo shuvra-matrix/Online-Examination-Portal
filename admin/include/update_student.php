@@ -1,7 +1,5 @@
 <?php
-include './include/session.php'; 
-include "./include/head.php";
-include "./include/navbar.php";
+
 
 $message = "";
 if (isset($_POST['update_student'])) {
@@ -16,7 +14,7 @@ if (isset($_POST['update_student'])) {
         $result = mysqli_query($connect, $query);
         if ($result) {
             echo " <script> alert('Update In Successfull'); 
-            window.location.href = './view_student.php';        
+            window.location.href = './view_student.php?action=#';        
             </script>";
         } else {
             $messages = "Something Went Wrong Please Try After sometime";
@@ -29,11 +27,10 @@ if (isset($_POST['update_student'])) {
 
 ?>
 
-
 <div class="admin_main">
     <form action="" method="POST">
         <?php
-        $value = $_GET["data"];
+        $value = $_GET["value"];
 
         $query = "SELECT * FROM user WHERE id = $value";
         $result = mysqli_query($connect, $query);

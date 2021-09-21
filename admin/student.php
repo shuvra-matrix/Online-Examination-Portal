@@ -1,20 +1,24 @@
+
 <?php
+include './include/session.php'; 
+include "./include/head.php";
+include "./include/navbar.php";
 $action = $_GET["action"];
 
 switch($action)
 {
     case "update_student":
-        $student_id = $_GET['value'];
-        header("Location: ./update_student.php?data=$student_id");
+        include "./include/update_student.php";
+        break;
+    case "add_student";
+        include "./include/add_student.php";
         break;
     case "delete_student":
         $student_id = $_GET['value'];
         $query = "DELETE FROM user WHERE id = '$student_id'";
         $result = mysqli_query($connect,$query);
-        header("Location: ./view_student.php");
-        break;
     default:
-        header("Location: ./view_student.php");
+        include "./include/view_student.php";
         break;
         
 }

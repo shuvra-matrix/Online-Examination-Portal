@@ -1,12 +1,6 @@
-<?php
-include './include/session.php';
-include "./include/head.php";
-include "./include/navbar.php";
-
-?>
 
 <div style="width: 90% ; margin: auto; overflow: auto;">
-    <table class="table table-striped" style="background-color: #f8c200;">
+    <table class="table table-striped" >
         <thead>
             <th>Id</th>
             <th>Name</th>
@@ -26,8 +20,8 @@ include "./include/navbar.php";
                     <td><?php echo $row['user_name'];         ?></td>
                     <td><?php echo $row['user_email'];         ?></td>
                     <td><?php echo $row['user_id'];         ?></td>
-                    <td><a style="text-decoration: none; color: green;" href="./student.php?action=update_student&value=<?php echo $row['id'] ?>">Update</a></td>
-                    <td><a onclick="return confirm('Are you sure you want to delete?')" style="text-decoration: none; color: red ;" href="./student.php?action=delete_student&value=<?php echo $row['id'] ?>">Delete</a></td>
+                    <td><a name='update' style="text-decoration: none; color: green;" href="./student.php?action=update_student&value=<?php echo $row['id'] ?>">Update</a></td>
+                    <td><a name='delete' onclick="return confirm('Are you sure you want to delete?')" style="text-decoration: none; color: red ;" href="./student.php?action=delete_student&value=<?php echo $row['id'] ?>">Delete</a></td>
                 </tr>
             <?php }  ?>
 

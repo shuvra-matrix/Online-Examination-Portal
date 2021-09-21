@@ -1,8 +1,4 @@
 <?php
-include './include/session.php'; 
-include "./include/head.php";
-include "./include/navbar.php";
-
 
 if (isset($_GET['value'])) {
     $id = $_GET['value'];
@@ -23,7 +19,7 @@ if(isset($_POST["update_topic"]))
     {
 
         echo "<script> alert('Topic Updated'); 
-            window.location.href = './topic.php'; 
+            window.location.href = './topic.php?action=#'; 
 
         </script>";
     } else {

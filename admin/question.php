@@ -6,16 +6,19 @@ $action = $_GET["action"];
 
 switch($action)
 {
-    case "update_topic":
-        include "./include/update_topic.php";
+    case "update_question":
+        include "./include/update_questions.php";
         break;
-    case "delete_topic":
+    case "add_question";
+        include "./include/add_questions.php";
+        break;
+    case "delete_question":
         $id = $_GET['data'];
         $id = mysqli_real_escape_string($connect,$id);
-        $query = "DELETE FROM topic WHERE id = '$id' ";
+        $query = "DELETE FROM questions WHERE id = '$id' ";
         $result = mysqli_query($connect, $query);
     default:
-        include "./include/view_topic.php";
+        include "./include/view_questions.php";
         break;
         
 }

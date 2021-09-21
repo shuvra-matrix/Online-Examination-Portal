@@ -1,9 +1,3 @@
-<?php
-include './include/session.php';
-include "./include/head.php";
-include "./include/navbar.php";
-
-?>
 
 <div style="width: 90% ; margin: auto; overflow: auto;">
     <table class="table table-striped" style="background-color: #f8c200;">
@@ -39,8 +33,8 @@ include "./include/navbar.php";
                     <td><?php echo $row['options4'];         ?></td>
                     <td><?php echo $rows['topic_name'];          ?></td>
                     <td><?php echo $row['ans'];         ?></td>
-                    <td><a style="text-decoration: none; color: green;" href="./update_questions.php?value=<?php echo $row['id'] ?>">Update</a></td>
-                    <td><a onclick="return confirm('Are you sure you want to delete?')" style="text-decoration: none; color: red ;" href="./delete.php?from=question&data=<?php echo $row['id'] ?>">Delete</a></td>
+                    <td><a name='update' style="text-decoration: none; color: green;" href="./question.php?action=update_question&value=<?php echo $row['id'] ?>">Update</a></td>
+                    <td><a name='delete' onclick="return confirm('Are you sure you want to delete?')" style="text-decoration: none; color: red ;" href="./question.php?action=delete_question&data=<?php echo $row['id'] ?>">Delete</a></td>
                 </tr>
             <?php }  ?>
 
