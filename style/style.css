@@ -109,14 +109,14 @@ button[name=login]{
     justify-content: center;
     border-radius: 8px;
     background-color: rgba(255, 127, 80, 0);
-    box-shadow: 3px 5px 6px 10px #57565638;
+    box-shadow: 0px 0px 10px 10px #57565694;
     text-align: center;
 
 }
 
 .topic_sub:hover{
     background-color: rgba(167, 167, 167, 0.082);
-    box-shadow: 2px 3px 3px 5px #57565638;
+    box-shadow: 0px 0px 5px 5px #57565657;
 }
 
 .student_button{
@@ -124,7 +124,7 @@ button[name=login]{
     background: #48b7ca;  
     background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  
     background: linear-gradient(to right, #ffd194, #70e1f5); 
-    box-shadow: 3px 5px 6px 10px #57565638;
+    box-shadow: 0px 0px 10px 10px #57565675;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 18px;
     color: black;
@@ -135,10 +135,16 @@ button[name=login]{
 
 
 .student_button:hover{
-    background-color: rgba(167, 167, 167, 0.082);
-    box-shadow: 2px 3px 3px 5px #57565638;
+    background-color: rgba(167, 167, 167, 0);
+    box-shadow: 0px 0px 5px 5px rgba(87, 86, 86, 0.356);
 }
 
+.student_button:focus{
+    outline: none !important;
+    border-color: #2b2b2b73;
+    box-shadow: 0 0 10px #42424263;
+
+}
 
 
 
@@ -157,7 +163,7 @@ flex-wrap: wrap;
 width: 60%;
 margin: 2rem auto;
 background-color: rgba(245, 245, 220, 0);
-box-shadow: 3px 5px 6px 10px #57565638;
+box-shadow: 0px 0px 10px 10px #57565669;
 padding: 1rem;
 border-radius: 8px;
 
