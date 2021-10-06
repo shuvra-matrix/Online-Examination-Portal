@@ -228,6 +228,9 @@ input[type=radio]:checked + label{color:green;}
         height: 80%;
         margin: 4rem auto;
     }
+    strong {
+        font-size: 1.5rem;
+    }
 
 }
 
@@ -241,6 +244,9 @@ input[type=radio]:checked + label{color:green;}
     .login_sub_div{
         width: 70%;
         padding: .5rem;
+    }
+    strong {
+        font-size: 1.3rem;
     }
 
     }

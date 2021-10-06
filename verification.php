@@ -31,7 +31,7 @@ if(isset($_POST["login"]))
 <div class="login_main_div">
     <div class="login_sub_div">
             <div class="login_div">
-               <strong>User Verifiaion</strong>
+               <strong>User verification</strong>
             </div>
             <div class="login_div">
                <p>Enter Your OTP!</p>
