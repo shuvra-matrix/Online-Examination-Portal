@@ -11,7 +11,8 @@ include './include/function.php'; ?>
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <link rel="shortcut icon" href="./icon/online.png" type="image/png">
+    <title>Exam Portal</title>
 </head>
 
 <!-- <body style="background-image: url('./image/21421.jpg'); background-size: cover;background-repeat: no-repeat; background-color: #eef6f9;"> -->
