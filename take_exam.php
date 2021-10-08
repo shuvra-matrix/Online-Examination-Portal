@@ -3,7 +3,6 @@ include "./include/logout.php";
 include "./include/head.php";
 include "./include/navbar.php";
 
-
 if (isset($_POST['submit'])) 
 {
     $user_ans  = $_POST['exampleRadios'];
@@ -33,7 +32,6 @@ if (isset($_POST['submit']))
         window.location.href = './student_index.php';
     </script>";
 }
-
 
 
 if (!isset($_SESSION['next_question'])) 
@@ -92,9 +90,6 @@ $option2 = $_SESSION['question_array'][$_SESSION['next_question']][3];
 $option3 = $_SESSION['question_array'][$_SESSION['next_question']][4];
 $option4 = $_SESSION['question_array'][$_SESSION['next_question']][5];
 $ans = $_SESSION['question_array'][$_SESSION['next_question']][6];
-
-
-
 
 ?>
 
