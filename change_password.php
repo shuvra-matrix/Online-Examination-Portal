@@ -34,8 +34,8 @@ if(isset($_POST["login"]))
             $mail->isSMTP();                                          
             $mail->Host       = 'smtp.gmail.com';                   
             $mail->SMTPAuth   = true;                                 
-            $mail->Username   = 'shuvratcp@gmail.com';                   
-            $mail->Password   = 'iamacool';                             
+            $mail->Username   = ''; //enter organization email                  
+            $mail->Password   = '';  //enter password                           
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
             $mail->Port       = 465;                                    
 
