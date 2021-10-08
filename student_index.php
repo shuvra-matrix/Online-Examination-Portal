@@ -35,7 +35,6 @@ $name =  $_SESSION['name'];
         <?php $div_no = $div_no + 1; } ?>
     </div>
 
-
 </div>
 
 

@@ -7,7 +7,6 @@ if(isset($_SESSION['id']))
 include "./include/head.php";
 ?>
 
-
 <?php
 $message = "";
 $data_password = "";
