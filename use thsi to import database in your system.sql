@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2021 at 09:14 AM
+-- Generation Time: Oct 08, 2021 at 09:49 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -31,7 +31,7 @@ CREATE TABLE `admin` (
   `admin_id` int(11) NOT NULL,
   `admin_userid` varchar(60) NOT NULL,
   `admin_password` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
@@ -55,7 +55,7 @@ CREATE TABLE `questions` (
   `options4` varchar(256) NOT NULL,
   `ans` varchar(256) NOT NULL,
   `topic` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `questions`
@@ -71,7 +71,8 @@ INSERT INTO `questions` (`id`, `question`, `option1`, `option2`, `options3`, `op
 (17, 'What do we use to define a block of code in Python language?', 'Key', 'Brackets', 'Indentation', 'None of these', 'Indentation', 1),
 (18, 'Which character is used in Python to make a single line comment?', '/', '//', '#', '!', '#', 1),
 (19, 'Which of the following statements is correct regarding the object-oriented programming concept in Python?', 'Classes are real-world entities while objects are not real', 'Objects are real-world entities while classes are not real', 'Both objects and classes are real-world entities', 'All of the above', 'Objects are real-world entities while classes are not real', 1),
-(20, 'What is the method inside the class in python language?', 'Object', 'Function', 'Attribute', 'Argument', 'Function', 1);
+(20, 'What is the method inside the class in python language?', 'Object', 'Function', 'Attribute', 'Argument', 'Function', 1),
+(25, 'fulu pranir kota hat', '1', '2', '3', '4', '4', 20);
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,7 @@ INSERT INTO `questions` (`id`, `question`, `option1`, `option2`, `options3`, `op
 CREATE TABLE `topic` (
   `id` int(11) NOT NULL,
   `topic_name` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `topic`
@@ -90,7 +91,15 @@ CREATE TABLE `topic` (
 
 INSERT INTO `topic` (`id`, `topic_name`) VALUES
 (1, 'Python'),
-(2, 'C Language');
+(2, 'C Language'),
+(8, 'C++'),
+(9, 'DBMS'),
+(10, 'DATA MINING'),
+(11, 'Computer Networks'),
+(12, 'Operating System'),
+(13, 'Business'),
+(14, 'AI & ML'),
+(15, 'Mobile Computing');
 
 -- --------------------------------------------------------
 
@@ -104,14 +113,14 @@ CREATE TABLE `user` (
   `user_email` varchar(60) NOT NULL,
   `user_password` varchar(60) NOT NULL,
   `user_id` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `user_name`, `user_email`, `user_password`, `user_id`) VALUES
-(6, 'Shuvra Chakrabarty', 'shuvrachakrabarty97@gmail.com', 'asdf', 'shuvra232');
+(9, 'Shuvra Chakrabarty', 'shuvrachakrabarty97@gmail.com', 'asdf', 'shuvra232');
 
 -- --------------------------------------------------------
 
@@ -121,28 +130,26 @@ INSERT INTO `user` (`id`, `user_name`, `user_email`, `user_password`, `user_id`)
 
 CREATE TABLE `user_score` (
   `id` int(11) NOT NULL,
-  `user_id` int(6) NOT NULL,
-  `score` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `user_id` varchar(255) NOT NULL,
+  `score` varchar(3) NOT NULL,
+  `topic_id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_score`
 --
 
-INSERT INTO `user_score` (`id`, `user_id`, `score`) VALUES
-(1, 12563, '3'),
-(2, 12563, '8'),
-(3, 12563, '9'),
-(4, 12563, '9'),
-(5, 12563, '1'),
-(6, 12563, '4'),
-(7, 12563, '9'),
-(8, 0, '2'),
-(9, 0, '1'),
-(10, 0, '4'),
-(11, 0, '3'),
-(12, 0, '0'),
-(13, 12563, '3');
+INSERT INTO `user_score` (`id`, `user_id`, `score`, `topic_id`, `date`, `name`) VALUES
+(16, 'shuvra232', '9', 1, '2021-09-21 12:19:06', 'Shuvra'),
+(17, 'shuvra232', '0', 2, '2021-09-21 12:19:39', 'Shuvra'),
+(18, 'shuvra232', '0', 2, '2021-09-21 12:24:42', 'Shuvra Chakrabarty'),
+(19, 'shuvra232', '0', 2, '2021-09-21 03:17:58', 'Shuvra Chakrabarty'),
+(20, 'shuvra232', '1', 2, '2021-09-21 03:25:35', 'Shuvra Chakrabarty'),
+(21, 'shuvra232', '4', 1, '2021-09-21 10:48:47', 'Shuvra Chakrabarty'),
+(22, 'shuvra232', '3', 1, '2021-09-22 08:12:56', 'Shuvra Chakrabarty'),
+(24, 'shuvra232', '7', 1, '2021-10-02 02:19:37', 'Shuvra Chakrabarty');
 
 --
 -- Indexes for dumped tables
@@ -193,35 +200,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `topic`
 --
 ALTER TABLE `topic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_score`
 --
 ALTER TABLE `user_score`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `questions`
---
-ALTER TABLE `questions`
-  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`topic`) REFERENCES `topic` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
