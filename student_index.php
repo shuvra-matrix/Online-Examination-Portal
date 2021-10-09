@@ -29,7 +29,7 @@ $name =  $_SESSION['name'];
                 <form action="take_exam.php" method="POST">
                     <h5><?php echo $row['topic_name'];  ?></h4>
                     <input type="hidden" name="id" value="<?php  echo $row['id'];    ?>">
-                    <button class="student_button">Start</button>
+                    <button class="student_button" onclick="return confirm('Are you sure you want start your exam?')">Start</button>
                 </form>
             </div>
         <?php $div_no = $div_no + 1; } ?>
